@@ -29,5 +29,7 @@
     "colors-tmpl": "^1.0.0",
     "workshopper": "^1.4.1",
     "workshopper-exercise": "^1.1.0"
-  }
+  },
+  "bin": "./tapeshopper.js",
+  "preferGlobal": true
 }
