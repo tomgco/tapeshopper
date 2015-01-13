@@ -1,0 +1,33 @@
+{
+  "name": "tapeshopper",
+  "version": "1.0.0",
+  "description": "Learn how to test with tape! (tap-producing test harness for node)",
+  "main": "tapeshopper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tomgco/tapeshopper.git"
+  },
+  "keywords": [
+    "nodeschool",
+    "tap",
+    "tape",
+    "test",
+    "unit",
+    "functional",
+    "acceptence"
+  ],
+  "author": "Tom Gallacher",
+  "license": "UNLICENSE",
+  "bugs": {
+    "url": "https://github.com/tomgco/tapeshopper/issues"
+  },
+  "homepage": "https://github.com/tomgco/tapeshopper",
+  "dependencies": {
+    "colors-tmpl": "^1.0.0",
+    "workshopper": "^1.4.1",
+    "workshopper-exercise": "^1.1.0"
+  }
+}
