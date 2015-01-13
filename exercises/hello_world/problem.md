@@ -1,4 +1,4 @@
-Write a test using tape, that asserts the result of a function named `hello` returns "Hello, World".
+Write a failing test using tape, that asserts the result of a function named `hello` returns "Hello, World".
 
 ----------------------------------------------------------------------
 ## HINTS
