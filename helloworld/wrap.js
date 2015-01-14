@@ -4,6 +4,7 @@ function wrap(ctx) {
   ctx.tapeCalls = {}
 
   ctx.tape = tape
+  tape.beep = 'boop'
 
   ctx.tapeCalls.end = 0;
 

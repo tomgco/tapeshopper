@@ -12,8 +12,8 @@ exports.run = function (args) {
   var f = require(path.resolve(args[0]));
 };
 
-exports.verify = verify({ modeReset: false }, function (args, t) {
-  wrappedexec([ require('./wrap') ], args[0], function (ctx) {
+exports.verify = function (args, cb) {
+  wrappedexec([ require('./wrap') ], args[0], function (ctx, done) {
     // we will need to wait for out module to finish running before we can do something.
     // but how can we do that?..
     var tc = tap.createConsumer();
@@ -28,9 +28,12 @@ exports.verify = verify({ modeReset: false }, function (args, t) {
             else return r;
         });
 
-        t.equal(rows[0], 1, 'Waaa?')
+        console.log(rs)
+        cb(false)
 
     })
+
     ctx.tape.createStream().pipe(tc)
+    done()
   })
-});
+};
