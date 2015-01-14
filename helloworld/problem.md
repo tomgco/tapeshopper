@@ -25,12 +25,13 @@ test('Some test', function (t) {
 ```
 
 You can have a look of the docs of `tape` here:
-{rootdir:/docs/tape.html}
+
+> $ADVENTURE_DOCS/docs/tape.html
 
 When you are done, you must run:
 
-``sh
-$ {appname} verify program.js
-``
+```sh
+$ADVENTURE_COMMAND verify program.js
+```
 
 to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.`

@@ -1,29 +1,37 @@
 #!/usr/bin/env node
 
-const workshopper = require('workshopper')
-    , path = require('path')
-    , credits = require('./credits')
-    , menu = require('./exercises/menu')
+var adventure = require('adventure');
+var shop = adventure('tapeshopper');
 
-    , name = 'tapeshopper'
-    , title = 'TEST ALL THE THINGS WITH TAPE!'
-    , subtitle = '\x1b[23mSelect an exercise and hit \x1b[3mEnter\x1b[23m to begin'
+var path = require('path');
 
+// SUPER HACK +=D
+shop._show = function (m) {
+    var self = this;
+    if (typeof m === 'object' && m.pipe) {
+        m.pipe(split()).pipe(through(write)).pipe(process.stdout);
+    }
+    else if (typeof m === 'function') {
+        this._show(m());
+    }
+    else console.log(replace(m));
 
-function fpath (f) {
-  return path.join(__dirname, f)
+    function write (buf, enc, next) {
+        this.push(replace(buf) + '\n');
+        next();
+    }
+    function replace (s) {
+        if (typeof s !== 'string') s = String(s);
+        return s
+            .replace(/\$ADVENTURE_COMMAND/g, self.command)
+            .replace(/\$ADVENTURE_NAME/g, self.name)
+            .replace(/\$ADVENTURE_DOCS/g, function (match, subpath) {
+              return 'file://' + path.join(__dirname)
+            })
+        ;
+    }
 }
 
+shop.add('HELLO, WORLD', function () { return require('./helloworld') });
 
-workshopper({
-    name        : name
-  , title       : title
-  , subtitle    : subtitle
-  , exerciseDir : fpath('./exercises/')
-  , appDir      : __dirname
-  , helpFile    : fpath('help.txt')
-  , menuItems   : [ {
-        name    : 'credits'
-      , handler : credits
-    } ]
-})
+shop.execute(process.argv.slice(2));
