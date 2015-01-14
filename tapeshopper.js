@@ -4,6 +4,8 @@ var adventure = require('adventure');
 var shop = adventure('tapeshopper');
 
 var path = require('path');
+var split = require('split');
+var through = require('through2');
 
 // SUPER HACK +=D
 shop._show = function (m) {
