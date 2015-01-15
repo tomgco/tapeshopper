@@ -34,6 +34,7 @@ shop._show = function (m) {
     }
 }
 
-shop.add('HELLO, WORLD', function () { return require('./helloworld') });
+shop.add('HELLO, WORLD', function () { return require('./exercises/helloworld') });
+shop.add('I SPY', function () { return require('./exercises/ispy') });
 
 shop.execute(process.argv.slice(2));

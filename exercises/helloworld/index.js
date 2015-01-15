@@ -1,6 +1,6 @@
 var msee = require('msee');
 var path = require('path')
-var verify = require('../lib/tape/verify')
+var verify = require('../../lib/tape/verify')
 var assert = require('assert')
 
 exports.problem = msee.parseFile(__dirname + '/problem.md');
