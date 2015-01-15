@@ -1,5 +1,4 @@
-Write a test that checks that the module `hello-world-classic` calls console.log with the argument of
-`Hello, world`.
+Write a test that checks that the module `hello-world-classic` calls `console.log` with the argument of Hello, world".
 
 ----------------------------------------------------------------------
 ## HINTS
