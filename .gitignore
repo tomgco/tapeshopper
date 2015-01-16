@@ -32,3 +32,6 @@ program.js
 .DS_Store
 *.swp
 *.swo
+
+# Stuff
+_test
