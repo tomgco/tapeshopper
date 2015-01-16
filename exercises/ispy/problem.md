@@ -18,6 +18,8 @@ var hello = require('hello-world-classic');
 To be able to assert that the output of the module `hello-world-classic` we can use the module `sinon` to spy on the function.
 A test spy is a function that records arguments, return value, the value of this and exception thrown (if any) for all its calls. A test spy can be an anonymous function or it can wrap an existing function.
 
+Docs are found at on the link below:
+
 > $ADVENTURE_DOCS/docs/sinon.html
 
 Example of checking if console.error is calledOnce with the specified argument

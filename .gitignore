@@ -26,6 +26,7 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+program.js
 
 # Mac os x
 .DS_Store
