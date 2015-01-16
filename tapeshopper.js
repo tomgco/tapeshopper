@@ -10,31 +10,32 @@ var through = require('through2');
 // SUPER HACK +=D
 shop._show = function (m) {
     var self = this;
-    if (typeof m === 'object' && m.pipe) {
-        m.pipe(split()).pipe(through(write)).pipe(process.stdout);
+    function replace (s) {
+        if (typeof s !== 'string') {
+          s = String(s);
+        }
+        return s
+            .replace(/\$ADVENTURE_COMMAND/g, self.command)
+            .replace(/\$ADVENTURE_NAME/g, self.name)
+            .replace(/\$ADVENTURE_DOCS/g, function () {
+              return 'file://' + path.join(__dirname);
+            })
+        ;
     }
-    else if (typeof m === 'function') {
-        this._show(m());
-    }
-    else console.log(replace(m));
-
     function write (buf, enc, next) {
         this.push(replace(buf) + '\n');
         next();
     }
-    function replace (s) {
-        if (typeof s !== 'string') s = String(s);
-        return s
-            .replace(/\$ADVENTURE_COMMAND/g, self.command)
-            .replace(/\$ADVENTURE_NAME/g, self.name)
-            .replace(/\$ADVENTURE_DOCS/g, function (match, subpath) {
-              return 'file://' + path.join(__dirname)
-            })
-        ;
+    if (typeof m === 'object' && m.pipe) {
+        m.pipe(split()).pipe(through(write)).pipe(process.stdout);
+    } else if (typeof m === 'function') {
+        this._show(m());
+    } else {
+      console.log(replace(m));
     }
-}
+};
 
-shop.add('HELLO, WORLD', function () { return require('./exercises/helloworld') });
-shop.add('I SPY', function () { return require('./exercises/ispy') });
+shop.add('HELLO, WORLD', function () { return require('./exercises/helloworld'); });
+shop.add('I SPY', function () { return require('./exercises/ispy'); });
 
 shop.execute(process.argv.slice(2));
