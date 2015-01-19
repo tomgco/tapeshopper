@@ -1,11 +1,11 @@
 {
-<<<<<<< HEAD
   "name": "tapeshopper",
   "version": "1.0.0",
   "description": "Learn how to test with tape! (tap-producing test harness for node)",
   "main": "tapeshopper.js",
   "contributors": [
-    "Tom Gallacher <me@tomg.co> (https://github.com/tomgco)"
+    "Tom Gallacher <me@tomg.co> (https://github.com/tomgco)",
+    "Finn Pauls"
   ],
   "repository": {
     "type": "git",
@@ -34,45 +34,10 @@
     "tap": "^0.4.13",
     "tap-parser": "^0.7.0",
     "tape": "^3.0.3",
-    "through2": "^0.6.3"
-  },
-  "bin": "./tapeshopper.js",
-  "preferGlobal": true
-=======
-  "name": "test-anything",
-  "version": "0.2.0",
-  "description": "Learn to test anything",
-  "main": "index.js",
-  "bin": {
-    "test-anything": "./test-anything.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/finnp/test-anything.git"
-  },
-  "keywords": [
-    "nodeschool",
-    "workshopper",
-    "learn",
-    "cli",
-    "tap"
-  ],
-  "author": "Finn Pauls",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/finnp/test-anything/issues"
-  },
-  "homepage": "https://github.com/finnp/test-anything",
-  "dependencies": {
-    "adventure": "^2.6.0",
-    "adventure-verify": "^2.1.2",
+    "through2": "^0.6.3",
     "cli-md": "^0.1.0",
-    "tape": "^2.13.4",
     "workshopper-exercise": "^1.1.0"
   },
+  "bin": "./tapeshopper.js",
   "preferGloabal": true
->>>>>>> 8dd8895a7046ffeaff730c8b78211b947ab80e53
 }
