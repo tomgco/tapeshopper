@@ -46,3 +46,11 @@ t.throws(petDog('dachshund'))
 
 Now the tests expects an error and throws an error if there is no error.
 Mind boggling, right?
+
+When you are done, you must run:
+
+```sh
+$ADVENTURE_COMMAND verify program.js
+```
+
+to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.`

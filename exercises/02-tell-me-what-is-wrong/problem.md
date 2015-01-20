@@ -39,3 +39,11 @@ Or as an alternatively:
 
 ## Resources
 - Node documentation: http://nodejs.org/api/assert.html
+
+When you are done, you must run:
+
+```sh
+$ADVENTURE_COMMAND verify program.js
+```
+
+to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.`

@@ -31,3 +31,11 @@ In this example we only have one callback, which will simply pass the test when 
 is called. So we could have used `t.end()` within the callback instead. However you
 might see, that if we had multiple callbacks in our tests the `t.plan(n)` would come 
 in handy.
+
+When you are done, you must run:
+
+```sh
+$ADVENTURE_COMMAND verify program.js
+```
+
+to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.`

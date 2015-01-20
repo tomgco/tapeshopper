@@ -17,3 +17,11 @@ result, then checking its output in the console.
 
 Try this yourself. We are going to provide the location for the awesome
 `emotify` module in `process.argv[2]` and the String for the test in `process.argv[3]`.
+
+When you are done, you must run:
+
+```sh
+$ADVENTURE_COMMAND verify program.js
+```
+
+to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.`

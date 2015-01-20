@@ -43,3 +43,11 @@ Here is an example how to test the last function with `tape`
 
 * TAP on Wikipedia http://en.wikipedia.org/wiki/Test_Anything_Protocol
 * The tape module https://www.npmjs.org/package/tape
+
+When you are done, you must run:
+
+```sh
+$ADVENTURE_COMMAND verify program.js
+```
+
+to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.`
