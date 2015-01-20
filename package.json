@@ -32,13 +32,14 @@
   "dependencies": {
     "adventure": "^2.9.0",
     "adventure-verify": "^2.2.0",
+    "cli-md": "^0.1.0",
+    "concat-stream": "^1.4.7",
     "msee": "^0.1.1",
     "split": "^0.3.2",
     "tap": "^0.4.13",
     "tap-parser": "^0.7.0",
     "tape": "^3.0.3",
     "through2": "^0.6.3",
-    "cli-md": "^0.1.0",
     "workshopper-exercise": "^1.1.0"
   },
   "bin": "./tapeshopper.js",

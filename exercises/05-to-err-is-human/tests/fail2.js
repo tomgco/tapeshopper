@@ -1,3 +1,3 @@
-module.exports = function (food) {
-  return 'yum'
-}
+module.exports = function () {
+  return 'yum';
+};

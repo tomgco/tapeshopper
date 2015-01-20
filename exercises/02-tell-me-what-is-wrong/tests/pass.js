@@ -1,3 +1,3 @@
 module.exports = function (n) {
-  return n === 42
-}
+  return n === 42;
+};
