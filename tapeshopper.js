@@ -34,8 +34,8 @@ shop._show = function (m) {
       console.log(replace(m));
     }
 };
-
-shop.add('HELLO, WORLD', function () { return require('./exercises/00-hello-world'); });
+// Too difficult for a first exercise
+//shop.add('HELLO, WORLD', function () { return require('./exercises/00-hello-world'); });
 shop.add('LOG IT OUT', function () { return require('./exercises/01-log-it-out'); });
 shop.add('TELL ME WHAT IS WRONG', function () { return require('./exercises/02-tell-me-what-is-wrong'); });
 shop.add('TAPE IT TOGETHER', function () { return require('./exercises/03-tape-it-together'); });
