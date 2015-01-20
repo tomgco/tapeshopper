@@ -12,7 +12,7 @@ exports.execTest = function (dir, failFiles, passFile, args, t) {
       [ path.join(dir, 'tests', testFile) ],
       {silent: true})
       .on('close', function (code) {
-        t.ok(code, 'wrong function not accepted');
+        t.ok(code, 'failing tests should fail');
       });
   });
 
@@ -20,6 +20,6 @@ exports.execTest = function (dir, failFiles, passFile, args, t) {
     [ path.join(dir, 'tests', passFile) ],
     {silent: true})
     .on('close', function (code) {
-      t.ok(!code, 'correct function accepted');
+      t.ok(!code, 'passing tests should pass');
     });
 };
