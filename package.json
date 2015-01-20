@@ -42,5 +42,8 @@
     "workshopper-exercise": "^1.1.0"
   },
   "bin": "./tapeshopper.js",
-  "preferGloabal": true
+  "preferGloabal": true,
+  "devDependencies": {
+    "eslint": "^0.12.0"
+  }
 }
