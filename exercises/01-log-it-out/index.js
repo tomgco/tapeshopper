@@ -8,7 +8,9 @@ exports.problem = msee.parseFile(path.join(__dirname, 'problem.md'));
 exports.solution = msee.parseFile(path.join(__dirname, 'solution.md'));
 
 exports.verify = verify(function (args, t) {
-  t.plan(1);
+  t.plan(2);
+
+  t.assert(args[0], 'You much supply an argument to verify');
 
   var program = fork(path.join(process.cwd(), args[0]),
     [ path.join(__dirname, 'tests', 'emotify.js'), 'testing like a pro'],
