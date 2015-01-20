@@ -13,10 +13,9 @@ Write tests that output `TAP`, that tests the following properties of a function
 ## Hints
 
 Testing with `assert` still has some downsides. Even though we don't have to
-check all the values ourself like in the first level, but now we only get not
-very readable errors when something is wrong. Otherwise our tests just don't do
+check all the values ourselves like in the first level, now we only get
+readable errors when something is wrong. Otherwise our tests just don't do
 nothing. Maybe we still would like to see some information that everything is ok.
-
 
 There is a standard for outputting data from tests called `TAP`, the 
 `Test Anything Protocol`. It is nicely readable for humans as well as for our robotic

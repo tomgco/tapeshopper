@@ -32,6 +32,8 @@
   "dependencies": {
     "adventure": "^2.9.0",
     "adventure-verify": "^2.2.0",
+    "binary-split": "^0.1.2",
+    "bl": "^0.9.4",
     "concat-stream": "^1.4.7",
     "msee": "^0.1.1",
     "split": "^0.3.2",
