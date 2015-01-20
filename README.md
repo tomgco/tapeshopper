@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tomgco/tapeshopper.svg?branch=master)](https://travis-ci.org/tomgco/tapeshopper)
+
 # tapeshopper
 Learn how to test with tape! (tap-producing test harness for node)
 
