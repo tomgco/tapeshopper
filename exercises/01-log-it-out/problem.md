@@ -1,15 +1,14 @@
 # Log it out
 
-Developing apps and modules is fun. However often you might be concerned wether things
-work or when you add new features you want to be sure you did not break anything. 
-Therefore developers invented tests for their well-being. They allow you to automatically,
-well, test your application or module.
+Developing apps and modules is fun. However often you might be concerned whether things
+work or when you add new features you want to be sure you did not break anything.
+Therefore developers invented tests for their well-being. They allow you to test your application or module using repeatable inputs and outputs.
 
 Let's assume you wrote a function called `emotify`, which takes a String and adds
 a space and a `:)` to it. How would you check that your function is working?
 
-Maybe your first idea was calling the function with a value und `console.log` the 
-result and then check its output in the console.
+Maybe your first idea was to call the function with a value and `console.log` the
+result, then checking its output in the console.
 
 ```js
   var emotify = require('./emotify.js')

@@ -1,11 +1,11 @@
 var path = require('path');
 var fork = require('child_process').fork;
 var concat = require('concat-stream');
-var parse = require('../utils').parse;
 var verify = require('adventure-verify');
+var msee = require('msee');
 
-exports.problem = parse(path.join(__dirname, 'problem.md'));
-exports.solution = parse(path.join(__dirname, 'solution.md'));
+exports.problem = msee.parseFile(path.join(__dirname, 'problem.md'));
+exports.solution = msee.parseFile(path.join(__dirname, 'solution.md'));
 
 exports.verify = verify(function (args, t) {
   t.plan(1);
