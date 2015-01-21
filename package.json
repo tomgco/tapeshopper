@@ -1,6 +1,6 @@
 {
   "name": "tapeshopper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Learn how to test with tape! (tap-producing test harness for node)",
   "main": "tapeshopper.js",
   "contributors": [
