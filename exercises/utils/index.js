@@ -19,10 +19,14 @@ exports.execTest = function (dir, failFiles, passFile, args, t) {
       });
   });
 
-  fork(path.join(process.cwd(), solutionFile),
+  var ok = fork(path.join(process.cwd(), solutionFile),
     [ path.join(dir, 'tests', passFile) ],
     {silent: true})
-    .stdio[1].pipe(bs()).pipe(through(function (chunk, enc, cb) {
+    .on('close', function (code) {
+      t.ok(!code, 'passing tests should pass');
+    });
+
+    ok.stdio[1].pipe(bs()).pipe(through(function (chunk, enc, cb) {
       if (chunk.toString().indexOf('not ok') !== -1) {
         this.push(chunk + '\n');
         this.ok = false;
@@ -35,9 +39,9 @@ exports.execTest = function (dir, failFiles, passFile, args, t) {
       }
       cb();
     })).pipe(bl(function (err, data) {
+      if (err) {
+        console.error(err);
+      }
       process.stdout.write(data);
-    }))
-    .on('close', function (code) {
-      t.ok(!code, 'passing tests should pass');
-    });
+    }));
 };
