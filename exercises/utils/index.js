@@ -26,22 +26,27 @@ exports.execTest = function (dir, failFiles, passFile, args, t) {
       t.ok(!code, 'passing tests should pass');
     });
 
+    ok.stdio[2].pipe(bs()).pipe(through(function (chunk, enc, cb) {
+      process.stderr.write('\x1b[0m' + chunk + '\n' + '\x01\x1b[1;32m\x02');
+      cb();
+    }));
+
     ok.stdio[1].pipe(bs()).pipe(through(function (chunk, enc, cb) {
       if (chunk.toString().indexOf('not ok') !== -1) {
-        this.push(chunk + '\n');
+        this.push('\x1b[1;31m' + chunk + '\n');
         this.ok = false;
       } else if (this.ok === false) {
         if (chunk.toString().indexOf('...') !== -1) {
           this.ok = true;
         }
 
-        this.push(chunk + '\n');
+        this.push('\x1b[0m' + chunk + '\n');
       }
       cb();
     })).pipe(bl(function (err, data) {
       if (err) {
-        console.error(err);
+        process.stderr.write(err.message);
       }
-      process.stdout.write(data);
+      process.stdout.write('\x1b[0m' + data);
     }));
 };
