@@ -9,10 +9,11 @@ exports.execTest = function (dir, failFiles, passFile, extraFn, args, t) {
   // This callback will run after the first set of assertations have ran.
   // this will allow use to test for methods that have been called to assist in
   // finding out problems for the workshopee
+  t.plan(failFiles.length + 1);
   function callback() {
     // plan for the number of fail files asserted then plus one for the pass
     // plus the number from extraFn
-    //t.plan(failFiles.length + 1);
+    //console.log('HEKKI1')
 
     var solutionFile = args[0];
 
@@ -58,7 +59,7 @@ exports.execTest = function (dir, failFiles, passFile, extraFn, args, t) {
 
   }
   if (typeof extraFn === 'function') {
-    extraFn(args, t, callback);
+    extraFn(args, callback);
   } else {
     t = args;
     args = extraFn;

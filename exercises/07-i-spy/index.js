@@ -13,12 +13,12 @@ exports.run = function (args) {
 };
 
 exports.verify = verify({ modeReset: true }, execTest.bind(
-  this, __dirname, ['fail1.js', 'fail2.js', 'fail3.js'], 'pass.js', verifyCalls(function (args, ctx, t, done) {
+  this, __dirname, ['fail1.js', 'fail2.js', 'fail3.js'], 'pass.js', verifyCalls(function (args, ctx, t) {
       var calls = ctx.tapeCalls;
       t.ok(calls.plan >= 1, 'You have not called `t.plan(n)`');
       t.equal(calls.end, 1, 't.end should only be called once');
       t.ok(calls.equal >= 1, 'You must have at least one call to `t.eqaul`');
-      t.equal(ctx.tape.results.ok, false, 'Your tests should fail');
+      t.equal(ctx.output.results.ok, false, 'Your tests should fail');
       t.end();
     })
 ));
