@@ -16,7 +16,10 @@ exports.execTest = function (dir, failFiles, passFile, args, t) {
       {silent: true})
       .on('close', function (code) {
         t.ok(code, 'failing tests should fail');
-      });
+      }).stdio[2].pipe(bs()).pipe(through(function (chunk, enc, cb) {
+        process.stderr.write('\x1b[0m' + chunk + '\n' + '\x01\x1b[1;32m\x02');
+        cb();
+      }));
   });
 
   var ok = fork(path.join(process.cwd(), solutionFile),
