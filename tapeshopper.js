@@ -43,6 +43,6 @@ shop.add('CALL ME MAYBE', function () { return require('./exercises/04-call-me-m
 shop.add('TO ERR, IS TO HUMAN', function () { return require('./exercises/05-to-err-is-human'); });
 
 // Not finished
-// shop.add('I SPY', function () { return require('./exercises/07-i-spy'); });
+shop.add('I SPY', function () { return require('./exercises/07-i-spy'); });
 
 shop.execute(process.argv.slice(2));

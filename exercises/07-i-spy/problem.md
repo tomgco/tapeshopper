@@ -1,38 +1,27 @@
-Write a test that checks that the module `hello-world-classic` calls `console.log` with the argument of Hello, world".
+Write a test that checks that the module `iAmDog` calls `console.log` with the argument of "Woof!".
+
+The function will be provided through `process.arv[2]`.
 
 ----------------------------------------------------------------------
 ## HINTS
 
-We will need to install and require the module `hello-world-classic`
+To be able to assert that our function `iAmDog` calls `console.log` we can use the module `sinon` to spy on the function.
 
-```javascript
-$ npm install hello-world-classic
-```
-
-You can then require this module by using the `require` function built-in to node.
-
-```javascript
-var hello = require('hello-world-classic');
-```
-
-To be able to assert that the output of the module `hello-world-classic` we can use the module `sinon` to spy on the function.
-A test spy is a function that records arguments, return value, the value of this and exception thrown (if any) for all its calls. A test spy can be an anonymous function or it can wrap an existing function.
+> "A test spy is a function that records arguments, return value, the value of this and exception thrown (if any) for all its calls. A test spy can be an anonymous function or it can wrap an existing function." ~ Sinon
 
 Docs are found at on the link below:
 
 > $ADVENTURE_DOCS/docs/sinon.html
 
-Example of checking if console.error is calledOnce with the specified argument
+Example of checking if console.error is called only one time with the specified argument:
 
 ```js
-var spy = sinon.spy(console, 'error')
-spy.withArgs('Hello, $ADVENTURE_NAME user!').calledOnce
+sinon.spy(console, 'error')
+t.ok(console.error.withArgs('Hello, $ADVENTURE_NAME user!').calledOnce);
 console.error.restore()
 ```
 
-You can have a look of the docs of `tape` here:
-
-> $ADVENTURE_DOCS/docs/tape.html
+Use your new found knowledge and build a tape test case to include sinon spies.
 
 When you are done, you must run:
 

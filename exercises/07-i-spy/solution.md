@@ -1,19 +1,16 @@
 This is the reference solution, have a look and see if you can see what we have done differently.
 
 ```javascript
-var test = require('tape');
+var external = require(process.argv[2]);
+var tape = require('tape');
 var sinon = require('sinon');
-var hello = require('hello-world-classic');
 
-test('hello test', function (t) {
-  var spy = sinon.spy(console, 'log');
-
-  hello();
-
-  t.equal(spy.withArgs('Hello, World'), true);
-  t.equal(spy.calledOnce, true);
-  t.plan(1);
-  t.equal(typeof hello, 'function');
+tape('hello test', function (t) {
+  sinon.spy(console, 'log');
+  external();
+  t.ok(console.log.withArgs('Woof!').calledOnce);
+  t.ok(console.log.withArgs('Woof!').called);
+  console.log.restore();
   t.end();
 });
 ```
