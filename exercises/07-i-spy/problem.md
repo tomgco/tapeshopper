@@ -16,8 +16,8 @@ Docs are found at on the link below:
 Example of checking if console.error is called only one time with the specified argument:
 
 ```js
-var spy = sinon.spy(console, 'error')
-spy.withArgs('Hello, $ADVENTURE_NAME user!').calledOnce
+sinon.spy(console, 'error')
+t.ok(console.error.withArgs('Hello, $ADVENTURE_NAME user!').calledOnce);
 console.error.restore()
 ```
 
